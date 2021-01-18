@@ -1072,6 +1072,41 @@ public class Base {
 		return value;
 	}
 	
+	////////
+	
+	public static String question1(int particularRow, int particularCellFromRow) throws IOException {
+
+		File f = new File("E:\\Selenium Practical\\JunitTasks\\ExcelSheets\\Facebook.xlsx");
+
+		FileInputStream fis = new FileInputStream(f);
+
+		Workbook wb = new XSSFWorkbook(fis);
+
+		Sheet sheet = wb.getSheet("Face Book");
+
+		Row row = sheet.getRow(particularRow);
+
+		Cell cell = row.getCell(particularCellFromRow);
+		
+		int cellType = cell.getCellType();
+
+		String value = " ";
+
+		if (cellType == 1) {
+			value = cell.getStringCellValue();
+		} else if (DateUtil.isCellDateFormatted(cell)) {
+			Date dateCellValue = cell.getDateCellValue();
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy");
+			value = sdf.format(dateCellValue);
+		} else {
+			double numericCellValue = cell.getNumericCellValue();
+			long l = (long) numericCellValue;
+			value = String.valueOf(l);
+		}
+		return value;
+	}
+
+	
 	
 
 	

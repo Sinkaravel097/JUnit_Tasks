@@ -49,21 +49,20 @@ public class Question1 extends Base {
 		launchUrl("https://www.facebook.com/");
 		maxWindow();
 		FbLoginPojo fb = new FbLoginPojo();
-		findEle(fb.getUserEmail(), readExcel(2, 0));
-		findEle(fb.getUserPassword(), readExcel(2, 1));
+		findEle(fb.getUserEmail(), question1(2, 0));
+		findEle(fb.getUserPassword(), question1(2, 1));
 		clickAny(fb.getLogin());
 		Thread.sleep(3000);
 	}
 
-	@Ignore
 	@Test
 	public void tc2() throws IOException, InterruptedException {
 
 		launchUrl("https://www.facebook.com/");
 		maxWindow();
 		FbLoginPojo fb = new FbLoginPojo();
-		findEle(fb.getUserEmail(), readExcel(3, 0));
-		findEle(fb.getUserPassword(), readExcel(3, 1));
+		findEle(fb.getUserEmail(), question1(3, 0));
+		findEle(fb.getUserPassword(), question1(3, 1));
 		clickAny(fb.getLogin());
 		Thread.sleep(3000);
 	}
@@ -74,8 +73,8 @@ public class Question1 extends Base {
 		launchUrl("https://www.facebook.com/");
 		maxWindow();
 		FbLoginPojo fb = new FbLoginPojo();
-		findEle(fb.getUserEmail(), readExcel(4, 0));
-		findEle(fb.getUserPassword(), readExcel(4, 1));
+		findEle(fb.getUserEmail(), question1(4, 0));
+		findEle(fb.getUserPassword(), question1(4, 1));
 		clickAny(fb.getLogin());
 		Thread.sleep(3000);
 	}
